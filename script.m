@@ -144,19 +144,6 @@ for i = 1:1:sample_num-window_size
 end;
 
 
-
-
-
-
-function y = hammingDistance(m,n)
-    y = 0;
-    for i = 1:1:length(m)
-        if m(i) ~= n(i)
-            y = y + 1;
-        end
-    end
-end
-
 function y = euclidianDistance(m,n)
     y = 0;
     for i = 1:1:length(m)
@@ -187,17 +174,3 @@ function y = oneBitQuantize(x)
     end
 end
 
-function y = twoBitQuantize(x)
-    y = zeros(1,length(x));
-    for i = 1:1:length(x)
-        if x(i) <= -0.5
-            y(i) = -0.75;
-        elseif x(i) <= 0
-            y(i) = -0.25;
-        elseif x(i) <= 0.5
-            y(i) = 0.25;
-        else
-            y(i) = 0.75;
-        end       
-    end
-end
